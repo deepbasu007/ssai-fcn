@@ -1,4 +1,7 @@
-# Make sure that caffe is on the python path:
+# Make sure that caffe is on the python path.
+
+# Usage: python scripts/cnn2fcn.py --mode <train/test> --caffemodel <path/to/snapshot.caffemodel>
+
 caffe_root = '../../caffe-fcn/'   # this file is expected to be in {ssai_root}/scripts
 import sys
 import caffe
