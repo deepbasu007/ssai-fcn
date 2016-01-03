@@ -1,0 +1,22 @@
+net: "train_test.prototxt"
+test_iter: 100
+test_interval: 1000
+
+solver_type: SGD
+base_lr: 3e-6
+lr_policy: "step"
+gamma: 0.1
+stepsize: 10000
+momentum: 0.99
+weight_decay: 0.0005
+
+display: 100
+max_iter: 400000
+
+snapshot: 10000
+snapshot_prefix: "snapshots/VGG_PReLU_Deconvnet_Roads_Mini"
+
+solver_mode: GPU
+device_id: 0
+
+random_seed: 1701
