@@ -174,8 +174,8 @@ layer {
     decay_mult: 0.01
   }
   param {
-    lr_mult: 0.01
-    decay_mult: 0.01
+    lr_mult: 2
+    decay_mult: 0
   }
   convolution_param {
     num_output: 128
@@ -603,8 +603,8 @@ layer {
     decay_mult: 0.01
   }
   param {
-    lr_mult: 0.01
-    decay_mult: 0.01
+    lr_mult: 2
+    decay_mult: 0
   }
   convolution_param {
     num_output: 4096
