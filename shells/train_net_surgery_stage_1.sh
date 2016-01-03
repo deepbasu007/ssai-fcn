@@ -14,7 +14,7 @@ mkdir $dname
 cd $dname
 mkdir snapshots
 cp ../../models/$modelname/*.prototxt ./
-caffe_dir=$HOME/Downloads/caffe-fcn
+caffe_dir=$HOME/caffe-fcn
 $caffe_dir/python/draw_net.py train_test_stage_1.prototxt net_stage_1.png
 echo 'start learning' $1
 

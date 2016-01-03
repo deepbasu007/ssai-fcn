@@ -18,10 +18,10 @@ mkdir $dname
 cd $dname
 mkdir snapshots
 cp ../../models/$modelname/*.prototxt ./
-caffe_dir=$HOME/Downloads/caffe-fcn
+caffe_dir=$HOME/caffe-fcn
 $caffe_dir/python/draw_net.py train_test_stage_2.prototxt net_stage_2.png
 
-ssai_dir=$HOME/Downloads/ssai-master
+ssai_dir=$HOME/ssai-fcn
 
 echo 'start learning' $1
 
