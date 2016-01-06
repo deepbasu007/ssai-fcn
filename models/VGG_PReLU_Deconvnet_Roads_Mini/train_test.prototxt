@@ -1,4 +1,4 @@
-name: "VGG_PReLU_Deconvnet_Roads_Mini"
+name: "VGG_PReLU_Roads_Mini"
 layer {
   name: "input_data"
   type: "Data"
@@ -6,7 +6,7 @@ layer {
   data_param {
     backend: LMDB
     source: "../../data/mass_roads_mini/lmdb/train_sat"
-    batch_size: 8
+    batch_size: 32
   }
   include: { phase: TRAIN }
 }
@@ -17,7 +17,7 @@ layer {
   data_param {
     backend: LMDB
     source: "../../data/mass_roads_mini/lmdb/train_map"
-    batch_size: 8
+    batch_size: 32
   }
   include: { phase: TRAIN }
 }
@@ -28,7 +28,7 @@ layer {
   data_param {
     backend: LMDB
     source: "../../data/mass_roads_mini/lmdb/valid_sat"
-    batch_size: 8
+    batch_size: 32
   }
   include: { phase: TEST }
 }
@@ -39,7 +39,7 @@ layer {
   data_param {
     backend: LMDB
     source: "../../data/mass_roads_mini/lmdb/valid_map"
-    batch_size: 8
+    batch_size: 32
   }
   include: { phase: TEST }
 }
@@ -124,6 +124,7 @@ layer {
       value: 0.001
     }
   }
+  
 }
 layer {
   name: "prelu3"
@@ -820,7 +821,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 128
+    num_output: 256
     pad: 1
     kernel_size: 3
     stride: 1
@@ -880,7 +881,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 128
+    num_output: 256
     pad: 1
     kernel_size: 3
     stride: 1
@@ -940,7 +941,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 128
+    num_output: 256
     pad: 1
     kernel_size: 3
     stride: 1
@@ -982,7 +983,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 128
+    num_output: 256
     pad: 1
     kernel_size: 3
     stride: 1
@@ -1033,7 +1034,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 128
+    num_output: 256
     pad: 1
     kernel_size: 3
     stride: 1
@@ -1084,7 +1085,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 128
+    num_output: 256
     pad: 1
     kernel_size: 3
     stride: 1
@@ -1761,7 +1762,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 128
+    num_output: 64
     pad: 1
     kernel_size: 3
     stride: 1
@@ -1839,7 +1840,6 @@ layer {
     }
   }
 }
-
 layer {
   name: "predict_loss"
   type: "SigmoidCrossEntropyLoss"
@@ -1848,7 +1848,6 @@ layer {
   top: "predict_loss"
   loss_weight: 1
 }
-
 layer {
   name: "precision_recall_loss"
   type: "PrecisionRecallLoss"

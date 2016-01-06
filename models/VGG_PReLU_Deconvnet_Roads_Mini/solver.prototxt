@@ -14,7 +14,7 @@ display: 100
 max_iter: 400000
 
 snapshot: 10000
-snapshot_prefix: "snapshots/VGG_PReLU_Deconvnet_Roads_Mini"
+snapshot_prefix: "snapshots/VGG_PReLU_Roads-Mini"
 
 solver_mode: GPU
 device_id: 0
